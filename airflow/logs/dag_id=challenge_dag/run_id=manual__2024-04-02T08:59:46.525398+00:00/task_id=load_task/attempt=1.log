@@ -1,0 +1,37 @@
+[2024-04-02T08:59:58.510+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: challenge_dag.load_task manual__2024-04-02T08:59:46.525398+00:00 [queued]>
+[2024-04-02T08:59:58.517+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: challenge_dag.load_task manual__2024-04-02T08:59:46.525398+00:00 [queued]>
+[2024-04-02T08:59:58.517+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-04-02T08:59:58.553+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): load_task> on 2024-04-02 08:59:46.525398+00:00
+[2024-04-02T08:59:58.564+0000] {standard_task_runner.py:57} INFO - Started process 13944 to run task
+[2024-04-02T08:59:58.569+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'challenge_dag', 'load_task', 'manual__2024-04-02T08:59:46.525398+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/challenge_dag.py', '--cfg-path', '/tmp/tmportzuwya']
+[2024-04-02T08:59:58.569+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask load_task
+[2024-04-02T08:59:58.629+0000] {task_command.py:410} INFO - Running <TaskInstance: challenge_dag.load_task manual__2024-04-02T08:59:46.525398+00:00 [running]> on host codespaces-e864db
+[2024-04-02T08:59:58.726+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='challenge_dag' AIRFLOW_CTX_TASK_ID='load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-04-02T08:59:46.525398+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-02T08:59:46.525398+00:00'
+[2024-04-02T08:59:58.727+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-02T08:59:58.728+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo -e ".separator ","\n.import --skip 1 /workspaces/hands-on-introduction-data-engineering-4395021/lab/end-to-end/challenge.csv" | sqlite3 /workspaces/hands-on-introduction-data-engineering-4395021/lab/end-to-end/basic-etl-load-db.db']
+[2024-04-02T08:59:58.737+0000] {subprocess.py:86} INFO - Output:
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO - ERROR: missing TABLE argument. Usage:
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO - .import FILE TABLE       Import data from FILE into TABLE
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO -    Options:
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO -      --ascii               Use \037 and \036 as column and row separators
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO -      --csv                 Use , and \n as column and row separators
+[2024-04-02T08:59:59.002+0000] {subprocess.py:93} INFO -      --skip N              Skip the first N rows of input
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -      --schema S            Target table to be S.TABLE
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -      -v                    "Verbose" - increase auxiliary output
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -    Notes:
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -      *  If TABLE does not exist, it is created.  The first row of input
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -         determines the column names.
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -      *  If neither --csv or --ascii are used, the input mode is derived
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -         from the ".mode" output mode
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -      *  If FILE begins with "|" then it is a command that generates the
+[2024-04-02T08:59:59.003+0000] {subprocess.py:93} INFO -         input text.
+[2024-04-02T08:59:59.003+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-04-02T08:59:59.009+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-04-02T08:59:59.011+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=challenge_dag, task_id=load_task, execution_date=20240402T085946, start_date=20240402T085958, end_date=20240402T085959
+[2024-04-02T08:59:59.044+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task load_task (Bash command failed. The command returned a non-zero exit code 1.; 13944)
+[2024-04-02T08:59:59.066+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-04-02T08:59:59.075+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

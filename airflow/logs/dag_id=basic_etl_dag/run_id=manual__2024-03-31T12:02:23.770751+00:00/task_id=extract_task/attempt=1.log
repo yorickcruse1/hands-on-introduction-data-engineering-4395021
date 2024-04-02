@@ -1,0 +1,23 @@
+[2024-03-31T12:02:27.516+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: basic_etl_dag.extract_task manual__2024-03-31T12:02:23.770751+00:00 [queued]>
+[2024-03-31T12:02:27.521+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: basic_etl_dag.extract_task manual__2024-03-31T12:02:23.770751+00:00 [queued]>
+[2024-03-31T12:02:27.521+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-03-31T12:02:27.553+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): extract_task> on 2024-03-31 12:02:23.770751+00:00
+[2024-03-31T12:02:27.557+0000] {standard_task_runner.py:57} INFO - Started process 13659 to run task
+[2024-03-31T12:02:27.560+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'basic_etl_dag', 'extract_task', 'manual__2024-03-31T12:02:23.770751+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/basic_etl_dag.py', '--cfg-path', '/tmp/tmphoj_eo_e']
+[2024-03-31T12:02:27.560+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask extract_task
+[2024-03-31T12:02:27.606+0000] {task_command.py:410} INFO - Running <TaskInstance: basic_etl_dag.extract_task manual__2024-03-31T12:02:23.770751+00:00 [running]> on host codespaces-e864db
+[2024-03-31T12:02:27.698+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='basic_etl_dag' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2024-03-31T12:02:23.770751+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-31T12:02:23.770751+00:00'
+[2024-03-31T12:02:27.700+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-03-31T12:02:27.700+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wget -c https://r2.datahub.io/clt98mhbp000nl708qb1tppbw/master/raw/top-level-domain-names.csv -O /workspaces/hands-on-introduction-data-engineering-4395021/lab/end-to-end/basic-etl-extract-data.csv']
+[2024-03-31T12:02:27.713+0000] {subprocess.py:86} INFO - Output:
+[2024-03-31T12:02:27.719+0000] {subprocess.py:93} INFO - --2024-03-31 12:02:27--  https://r2.datahub.io/clt98mhbp000nl708qb1tppbw/master/raw/top-level-domain-names.csv
+[2024-03-31T12:02:27.730+0000] {subprocess.py:93} INFO - Resolving r2.datahub.io (r2.datahub.io)... 172.67.157.38, 104.21.40.221, 2606:4700:3030::ac43:9d26, ...
+[2024-03-31T12:02:27.732+0000] {subprocess.py:93} INFO - Connecting to r2.datahub.io (r2.datahub.io)|172.67.157.38|:443... connected.
+[2024-03-31T12:02:27.867+0000] {subprocess.py:93} INFO - HTTP request sent, awaiting response... 416 Range Not Satisfiable
+[2024-03-31T12:02:27.867+0000] {subprocess.py:93} INFO - 
+[2024-03-31T12:02:27.867+0000] {subprocess.py:93} INFO -     The file is already fully retrieved; nothing to do.
+[2024-03-31T12:02:27.867+0000] {subprocess.py:93} INFO - 
+[2024-03-31T12:02:27.868+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-03-31T12:02:27.906+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=basic_etl_dag, task_id=extract_task, execution_date=20240331T120223, start_date=20240331T120227, end_date=20240331T120227
+[2024-03-31T12:02:27.972+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-03-31T12:02:27.987+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check
